@@ -16,9 +16,10 @@ define([],
 
       //const testDate = new Date("2017-03-25");
       //let date = new Date();
-      const date = new Date(new Date().toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" }));
 
       if (newEntityStatus !== oldEntityStatus) {
+        const date = new Date(new Date().toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" }));
+
         newRecord.setValue({
           fieldId: 'custbody_ga_status_update_date',
           value: date
