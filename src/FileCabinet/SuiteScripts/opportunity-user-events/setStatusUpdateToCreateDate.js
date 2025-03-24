@@ -3,14 +3,14 @@
  * @NScriptType Suitelet
  */
 
-// sets custbody_ga_status_update_date to datecreated for opportunities that don't have it set
+// sets custbody_ga_status_update_date to trandate for opportunities that don't have it set
 define(['N/record', 'N/search', 'N/log'],
 
   (record, search, log) => {
     const onRequest = (scriptContext) => {
       const opportunitySearch = search.create({
         type: search.Type.OPPORTUNITY,
-        columns: ['internalid', 'custbody_ga_status_update_date', 'datecreated']
+        columns: ['internalid', 'custbody_ga_status_update_date', 'trandate']
       });
 
       opportunitySearch.run().each(result => {
@@ -23,7 +23,7 @@ define(['N/record', 'N/search', 'N/log'],
         const opportunityUpdateDate = result.getValue({ name: 'custbody_ga_status_update_date' });
         if (opportunityUpdateDate) return true;
 
-        const opportunityCreateDate = result.getValue({ name: 'datecreated' });
+        const opportunityCreateDate = result.getValue({ name: 'trandate' });
         opportunityRecord.setValue({
           fieldId: 'custbody_ga_status_update_date',
           value: new Date(opportunityCreateDate)

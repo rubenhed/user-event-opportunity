@@ -18,7 +18,7 @@ define(['N/record'],
         id: opportunityId
       });
 
-      const newStatusId = 31; // 2.見積提出実績有
+      const newStatusId = 8; // 3.見積発行済
       opportunityRecord.setValue('entitystatus', newStatusId);
 
       const date = new Date(new Date().toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" }));
