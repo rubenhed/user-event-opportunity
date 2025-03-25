@@ -18,7 +18,7 @@ define([],
       //let date = new Date();
 
       if (newEntityStatus !== oldEntityStatus) {
-        const date = new Date(new Date().getTime() + (9 * 60 * 60 * 1000));
+        const date = new Date(); //new Date(new Date().getTime() + (9 * 60 * 60 * 1000));
 
         newRecord.setValue({
           fieldId: 'custbody_ga_status_update_date',

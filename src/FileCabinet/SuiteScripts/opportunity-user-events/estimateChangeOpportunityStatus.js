@@ -18,10 +18,10 @@ define(['N/record'],
         id: opportunityId
       });
 
-      const newStatusId = 31; // 3.見積発行済 // id: 31 for SB1, 8 for honban
+      const newStatusId = 8; // 3.見積発行済 // id: 31 for SB1, 8 for honban
       opportunityRecord.setValue('entitystatus', newStatusId);
 
-      const date = new Date(new Date().getTime() + (9 * 60 * 60 * 1000));
+      const date = new Date;
       opportunityRecord.setValue({
         fieldId: 'custbody_ga_status_update_date',
         value: date
